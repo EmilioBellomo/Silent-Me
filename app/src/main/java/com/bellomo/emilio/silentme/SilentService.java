@@ -155,7 +155,7 @@ public class SilentService extends IntentService {
         intent.setAction(ACTION_STOP);
         intent.putExtra(EXTRA_PARAM_ID, id);
 
-        /**
+        /*
          * chiamando getBroadcast sul PendingIntent, verrà eseguito un BroadcastReceiver,
          * di fatto potremmo anche eseguire un'activity o un service
          */
@@ -166,13 +166,13 @@ public class SilentService extends IntentService {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             alarm.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, alarmTime, pIntent);
 
-        /**
+        /*
          * questo viene eseguito sul momento
          */
         else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
             alarm.setExact(AlarmManager.RTC_WAKEUP, alarmTime, pIntent);
 
-        /**
+        /*
          * questo viene eseguito sul momento
          */
         else
